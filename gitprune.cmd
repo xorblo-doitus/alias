@@ -9,7 +9,7 @@ IF /I NOT "%1"=="--yes" (
 )
 
 
-FOR /F %%B IN ('git branch --merged main --no-color --format=%%(refname:short^)') DO (
+@FOR /F %%B IN ('git branch --merged main --no-color --format=%%(refname:short^)') DO (
 	@IF /I NOT "%%B"=="main" (
 		IF /I "%1"=="--yes" (
 			echo Archiving %%B
